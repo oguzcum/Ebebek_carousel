@@ -114,18 +114,18 @@
         const product = products.find(p => p.id == productId); 
     
 
-        const heartIcon = productItem.querySelector('.heart');
+        
+       
+            product.isFavorite = !product.isFavorite; 
+            localStorage.setItem('products', JSON.stringify(products)); 
+     
+            const heartIcon = productItem.querySelector('.heart');
         if (product.isFavorite) {
             heartIcon.style.backgroundColor = 'orange'; 
             
         } else {
             heartIcon.style.backgroundColor = ''; 
         }
-       
-            product.isFavorite = !product.isFavorite; 
-            localStorage.setItem('products', JSON.stringify(products)); 
-     
-            
         
             
         
